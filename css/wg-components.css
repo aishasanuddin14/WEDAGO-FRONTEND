@@ -1,125 +1,748 @@
-/* =====================
+/* ===============================
+   HEADER
+   =============================== */
+header.wg-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--wg-white);
+  box-shadow: var(--wg-shadow);
+  will-change: transform;
+}
+
+.wg-header__bar {
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.wg-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.wg-brand .brand-logo {
+  height: 2.25rem;
+  width: auto;
+  object-fit: contain;
+}
+
+.wg-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  background: var(--wg-light);
+  border: 1px solid var(--wg-border);
+  border-radius: 999px;
+  padding: 0.5625rem 0.75rem;
+}
+
+.wg-search input {
+  border: 0;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: var(--fs-base);
+}
+
+.wg-ico-btn {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--wg-border);
+  background: #fff;
+}
+
+/* ===============================
    HERO SLIDER
-===================== */
-
-.wg-hero{
-  position:relative;
-  overflow:hidden;
-  border-radius:1rem;
-  height:14rem;
-  box-shadow:var(--wg-shadow);
+   =============================== */
+.wg-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  height: 13.75rem;
+  background: #e5ffe8;
+  box-shadow: var(--wg-shadow);
+  touch-action: pan-y;
 }
 
-.wg-hero__track{
-  display:flex;
-  height:100%;
-  transition:transform .45s ease;
+.wg-hero__track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.45s ease;
+  will-change: transform;
 }
 
-.wg-slide{
-  min-width:100%;
-  position:relative;
+.wg-hero.dragging .wg-hero__track {
+  transition: none;
 }
 
-.wg-slide__img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.wg-slide {
+  position: relative;
+  min-width: 100%;
+  height: 100%;
+  flex: 0 0 100%;
+  border-radius: inherit;
+  overflow: hidden;
 }
 
-/* Dots */
-.wg-hero-dots{
-  position:absolute;
-  bottom:10px;
-  left:0;
-  right:0;
-  display:flex;
-  justify-content:center;
-  gap:8px;
+.wg-slide__img {
+  position: absolute;
+  inset: 0;
 }
 
-.wg-hero-dots .dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:rgba(255,255,255,.55);
-  transition:.3s ease;
+.wg-slide__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: inherit;
 }
 
-.wg-hero-dots .dot.active{
-  width:20px;
-  background:#fff;
-  border-radius:6px;
+.wg-slide__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: calc(var(--spacing-unit) * 0.875);
+  color: #0a4220;
+  pointer-events: none;
 }
 
-/* =====================
-   MENU GRID
-===================== */
-
-.wg-menu{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
+.wg-slide__content .wg-badge {
+  margin-top: auto;
+  margin-bottom: calc(var(--spacing-unit) * 0.875);
+  pointer-events: auto;
 }
 
-.wg-menu a{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:6px;
-  padding:10px 6px;
-  background:#fff;
-  border:1px solid var(--wg-border);
-  border-radius:var(--radius);
-  box-shadow:0 2px 8px rgba(0,0,0,.06);
-  font-size:var(--fs-small);
+.wg-badge {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--wg-green), var(--wg-green-dk));
+  font-size: clamp(0.8125rem, 0.775rem + 0.1875vw, 0.875rem);
+  letter-spacing: 0.2px;
 }
 
-/* =====================
-   HUB MENU
-===================== */
-
-.wg-hub-menu{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
+.wg-badge.is-top-left {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  margin: 0;
+  background: linear-gradient(135deg, #ffb703, #fb8500);
+  color: #0b1720;
 }
 
-.wg-hub-menu a{
-  flex:1 1 calc(50% - 10px);
-  background:#f8fafc;
-  padding:10px;
-  border-radius:10px;
-  text-align:center;
+.wg-hero__slogan {
+  margin-top: 0.5rem;
+  font-size: clamp(0.8125rem, 0.775rem + 0.1875vw, 0.875rem);
+  background: rgba(255,255,255,.82);
+  padding: 0.375rem 0.75rem;
+  border-radius: 999px;
 }
 
-/* =====================
-   HOME CARD
-===================== */
+  
 
-.home-card{
-  background:#fff;
-  border-radius:1rem;
-  box-shadow:0 2px 8px rgba(0,0,0,.06);
-  overflow:hidden;
+/* ===============================
+   WALLET v2
+   =============================== */
+.wg-wallet {
+  border-radius: 1rem;
+  box-shadow: var(--wg-shadow);
+  background: #fff;
+  padding: 0.75rem;
 }
 
-.home-card img{
-  height:9rem;
-  object-fit:cover;
+.wg-wallet__row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 0.625rem;
 }
 
-.home-card .body{
-  padding:10px;
+.wg-wallet__saldo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.home-card .name{
-  font-weight:800;
-  font-size:var(--fs-medium);
+.wg-balance-chip {
+  font-size: var(--fs-small);
 }
 
-.home-card .desc{
-  font-size:var(--fs-small);
-  color:var(--wg-gray);
+.wg-balance-amt {
+  font-size: var(--fs-medium);
+  font-weight: 800;
+  line-height: 1;
 }
 
+.wg-balance-sub {
+  font-size: var(--fs-small);
+}
+
+.wg-wallet__action {
+  font-size: var(--fs-small);
+}
+
+.wg-ico {
+  width: 2.125rem;
+  height: 2.125rem;
+  display: grid;
+  place-items: center;
+  background: #eaf9f0;
+  border-radius: 50%;
+}
+
+.wg-ico svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+/* ===============================
+   GRID MENU (4 kolom)
+   =============================== */
+.wg-menu {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: calc(var(--spacing-unit) * 0.875);
+  padding-inline: 0;
+}
+
+.wg-menu a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem;
+  border: 1px solid var(--wg-border);
+  background: var(--wg-white);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  text-align: center;
+  min-height: 5.625rem;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    border-color 0.12s ease,
+    background-color 0.12s ease;
+}
+
+.wg-menu .wg-menu-ico {
+  width: 3.75rem;
+  height: 3.75rem;
+  object-fit: contain;
+  border: none;
+  border-radius: 0.625rem;
+  padding: 0.125rem;
+  background: #fff;
+  box-shadow: none;
+}
+
+.wg-menu a span {
+  font-size: var(--fs-small);
+  line-height: 1.05;
+  font-weight: 600;
+}
+
+.wg-menu a:hover,
+.wg-menu a:focus-visible,
+.wg-menu a.is-touch {
+  transform: translateY(-0.0625rem);
+  border-color: #A7F3D0;
+  background: #F0FDF4;
+  box-shadow: 0 0.625rem 1.5rem rgba(1,165,50,.18);
+  outline: none;
+}
+
+  /* ===== TITLE MENU GRID ===== */
+.wg-section-menu h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: #111827;
+}
+
+/* ===== WRAPPER ala "card" MENU GRID ===== */
+.wg-menu-wrap {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 12px;
+  margin-top: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* ===== GRID MENU ===== */
+.wg-section-menu .wg-menu {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 kolom di layar lebar/HP lebar */
+  gap: 10px;
+}
+
+
+
+/* ===== ITEM MENU ===== */
+.wg-section-menu .wg-menu a {
+  text-align: center;
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 4px;
+}
+
+/* ===== ICON MENU ===== */
+.wg-section-menu .wg-menu-ico {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 6px;
+}
+
+/* ===== LABEL MENU ===== */
+.wg-section-menu .wg-menu a span {
+  font-size: 11px;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1.2;
+}
+
+/* ===== HUB SECTION TITLE ===== */
+.wg-section-hub h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 12px;   /* jarak judul ke menu */
+  color: #111827;
+}
+
+/* ===== HUB MENU WRAPPER (kalau pakai wrapper card) ===== */
+/* Tambah ini kalau kamu sudah bungkus HTML dengan .wg-hub-wrap */
+.wg-hub-wrap {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 12px;
+  margin-top: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* ===== HUB MENU GRID ===== */
+.wg-hub-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px; /* sedikit ruang dari judul/wrapper */
+}
+
+/* ===== HUB MENU ITEM (CARD) ===== */
+.wg-hub-menu a {
+  flex: 1 1 calc(50% - 10px);   /* 2 kolom */
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 8px;
+  border-radius: 10px;
+
+  background: #f8fafc;
+  border: 1px solid rgba(148,163,184,0.2);
+  box-shadow: 0 1px 2px rgba(15,23,42,0.05);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90px;
+}
+
+.wg-hub-menu a:active,
+.wg-hub-menu a:focus-visible {
+  transform: translateY(1px);
+  box-shadow: 0 1px 3px rgba(15,23,42,0.12);
+}
+
+/* ===== HUB ICON ===== */
+.wg-hub-ico {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 6px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ===== HUB LABEL ===== */
+.wg-hub-menu a span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1.2;
+}
+
+/* ===============================
+   PESAN CEPAT (slider horizontal)
+   =============================== */
+.wg-sec-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 0.5rem;
+}
+
+.wg-sec-head h3 {
+  margin: 0;
+  font-size: var(--fs-medium);
+}
+
+.wg-link {
+  font-size: 0.75rem;
+  color: var(--wg-green);
+  font-weight: 800;
+}
+
+.wg-quick-slider {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding: 0.375rem 0.125rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  will-change: scroll-position;
+}
+
+.wg-quick-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.wg-new-item {
+  min-width: 4.5rem;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.wg-new-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--wg-border);
+  background: #fff;
+  box-shadow: var(--wg-shadow);
+  font-size: 1.375rem;
+  line-height: 1;
+}
+
+.wg-new-item span {
+  font-size: clamp(0.71875rem, 0.68125rem + 0.1875vw, 0.78125rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--wg-dark);
+  text-align: center;
+}
+
+.wg-new-item:focus-visible .wg-new-icon {
+  box-shadow: 0 0 0 3px rgba(1,165,50,.25);
+}
+
+/* ===============================
+   KATEGORI PILIHAN / SEGPILL
+   =============================== */
+.home-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.75rem 0 0.5rem;
+}
+
+.home-section-head h2 {
+  margin: 0;
+  font-size: var(--fs-large);
+  font-weight: 800;
+}
+
+.seg {
+  display: flex;
+  background: #fff;
+  border: 1px solid var(--wg-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.seg button {
+  padding: 0.375rem 0.625rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: #6B7280;
+}
+
+.seg button[aria-pressed="true"] {
+  color: var(--wg-green-dk);
+  font-weight: 700;
+}
+
+/* Segmented pill (kategori Kuliner / UMKM / Fresh) */
+.segpill {
+  --seg-count: 3;
+  --seg-index: 0;
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 0;
+  padding: 0.25rem;
+  border: 1px solid var(--wg-border);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: var(--wg-shadow);
+}
+
+.segpill__btn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  font: 700 0.78125rem/1.1 "Poppins", system-ui, sans-serif;
+  color: #6B7280;
+  cursor: pointer;
+}
+
+.segpill__btn .ico {
+  font-size: var(--fs-base);
+}
+
+.segpill__btn.active {
+  color: var(--wg-green-dk);
+}
+
+.segpill__slider {
+  position: absolute;
+  left: 0.25rem;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  width: calc((100% - 0.5rem)/var(--seg-count));
+  border-radius: 999px;
+  background: #E8F9EF;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,.03);
+  transform: translateX(calc(var(--seg-index)*100%));
+  transition: transform 0.22s ease, width 0.22s ease;
+}
+
+/* ===============================
+   LIST/GRID/MASONRY + CARD PRODUK
+   =============================== */
+#homeList {
+  content-visibility: auto;
+  contain-intrinsic-size: 800px 1000px;
+  border-radius: 1rem;
+}
+
+#homeList.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+#homeList.list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-unit) * 0.875);
+  padding-inline: var(--spacing-unit);
+}
+
+#homeList.masonry {
+  column-count: 2;
+  column-gap: 1rem;
+}
+
+#homeList.masonry .home-card {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+.home-card {
+  position: relative;
+  background: var(--wg-white);
+  border: 1px solid rgba(17,24,39,.08);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.home-card img {
+  width: 100%;
+  height: 8.75rem;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  display: block;
+}
+
+.home-card .body {
+  padding: 0.625rem;
+}
+
+.home-card .name {
+  margin: 0 0 0.25rem;
+  font-size: clamp(0.90625rem, 0.86875rem + 0.1875vw, 0.96875rem);
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: 0.1px;
+}
+
+.home-card .desc {
+  margin: 0;
+  color: #6B7280;
+  font-size: clamp(0.78125rem, 0.74375rem + 0.1875vw, 0.84375rem);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* meta badge (rating / status buka) */
+.home-card .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.375rem;
+  font-size: 0.75rem;
+  color: var(--wg-green-dk);
+  font-weight: 600;
+}
+
+.home-card .meta span {
+  background: #E8F9EF;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+}
+
+/* Mode LIST: kartu horisontal */
+#homeList.list .home-card a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+}
+
+#homeList.list .home-card img {
+  width: 5.25rem;
+  height: 5.25rem;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  flex: 0 0 auto;
+}
+
+#homeList.list .home-card .body {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+}
+
+#homeList.list .home-card .name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#homeList.list .home-card .meta {
+  margin-top: 0.375rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--wg-green-dk);
+}
+
+/* ===============================
+   NAVBAR BAWAH WEDAGO (FAB NAV)
+   =============================== */
+.wg-fabnav {
+  position: fixed;
+  left: 50%;
+  bottom: calc(env(safe-area-inset-bottom, 12px) + 14px);
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 92%;
+  max-width: 400px;
+
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid var(--pill-bd);
+  border-radius: 100px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  z-index: 9999;
+
+  min-height: 3.25rem;
+}
+
+.wg-fabnav__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 60px;
+  height: 52px;
+
+  border-radius: 100px;
+  color: var(--wg-green-dk);
+  font-size: 10px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.wg-fabnav__item.active {
+  background: #E8F9EF;
+  color: #0B6A2B;
+}
+
+.wg-fabnav__item svg {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 3px;
+  stroke-width: 2 !important;
+  vector-effect: non-scaling-stroke;
+}
+
+.wg-fabnav__label {
+  overflow: visible;
+  text-overflow: unset;
+  max-width: unset;
+}
