@@ -1,1 +1,125 @@
+/* =====================
+   HERO SLIDER
+===================== */
+
+.wg-hero{
+  position:relative;
+  overflow:hidden;
+  border-radius:1rem;
+  height:14rem;
+  box-shadow:var(--wg-shadow);
+}
+
+.wg-hero__track{
+  display:flex;
+  height:100%;
+  transition:transform .45s ease;
+}
+
+.wg-slide{
+  min-width:100%;
+  position:relative;
+}
+
+.wg-slide__img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Dots */
+.wg-hero-dots{
+  position:absolute;
+  bottom:10px;
+  left:0;
+  right:0;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+}
+
+.wg-hero-dots .dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:rgba(255,255,255,.55);
+  transition:.3s ease;
+}
+
+.wg-hero-dots .dot.active{
+  width:20px;
+  background:#fff;
+  border-radius:6px;
+}
+
+/* =====================
+   MENU GRID
+===================== */
+
+.wg-menu{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.wg-menu a{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  padding:10px 6px;
+  background:#fff;
+  border:1px solid var(--wg-border);
+  border-radius:var(--radius);
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  font-size:var(--fs-small);
+}
+
+/* =====================
+   HUB MENU
+===================== */
+
+.wg-hub-menu{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.wg-hub-menu a{
+  flex:1 1 calc(50% - 10px);
+  background:#f8fafc;
+  padding:10px;
+  border-radius:10px;
+  text-align:center;
+}
+
+/* =====================
+   HOME CARD
+===================== */
+
+.home-card{
+  background:#fff;
+  border-radius:1rem;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  overflow:hidden;
+}
+
+.home-card img{
+  height:9rem;
+  object-fit:cover;
+}
+
+.home-card .body{
+  padding:10px;
+}
+
+.home-card .name{
+  font-weight:800;
+  font-size:var(--fs-medium);
+}
+
+.home-card .desc{
+  font-size:var(--fs-small);
+  color:var(--wg-gray);
+}
 
