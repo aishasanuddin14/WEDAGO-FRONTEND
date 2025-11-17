@@ -1,1 +1,47 @@
+/* QUICK SLIDER */
+.wg-quick-slider{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding:6px 2px;
+  scroll-snap-type:x mandatory;
+}
+
+.wg-new-item{
+  min-width:4.5rem;
+  flex:0 0 auto;
+  scroll-snap-align:start;
+  text-align:center;
+}
+
+/* SEGMENTED PILL */
+.segpill{
+  display:flex;
+  gap:4px;
+  padding:4px;
+  border:1px solid var(--wg-border);
+  border-radius:999px;
+}
+
+/* LIST / GRID / MASONRY */
+#homeList.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+}
+
+#homeList.list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+#homeList.masonry{
+  column-count:2;
+  column-gap:1rem;
+}
+
+#homeList.masonry .home-card{
+  break-inside:avoid;
+}
 
