@@ -1,1 +1,39 @@
+:root{
+  --wg-green: #01A532;
+  --wg-green-dk: #0B6A2B;
+  --wg-dark: #065f46;
+  --wg-gray: #6B7280;
+  --wg-mid: #9CA3AF;
+  --wg-light: #FFFFFF;
+  --wg-white: #FFFFFF;
+  --wg-border: #E5E7EB;
+  --wg-shadow: 0 4px 14px rgba(0,0,0,.08);
+  --radius: 14px;
+
+  --fs-small:  clamp(0.68rem, 0.65rem + 0.18vw, 0.75rem);
+  --fs-base:   clamp(0.875rem, 0.84rem + 0.18vw, 0.94rem);
+  --fs-medium: clamp(1rem, 0.96rem + 0.18vw, 1.06rem);
+  --fs-large:  clamp(1.06rem, 1.02rem + 0.18vw, 1.12rem);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:#fff;
+  font-family:"Poppins", sans-serif;
+  color:var(--wg-dark);
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
 /* WedaGo Base Styles */
