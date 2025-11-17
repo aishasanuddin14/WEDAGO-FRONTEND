@@ -28,7 +28,7 @@
     // Segmented kategori (pill)
     initSegKategori();
 
-    // Load data kartu dari CSV (Google Sheets)
+    // Load data kartu dari CSV
     loadBerandaKategori();
   });
 
@@ -296,27 +296,38 @@
   // =========================
   //  CSV LOADER KARTU BERANDA
   // =========================
-const CSV_URL_KATEGORI = 'https://cdn.jsdelivr.net/gh/aishasanuddin14/beranda_kategori_csv/csv/home_kategori.csv';
-// atau path yang kamu pakai bener2, kalau di dalam folder:
-// 'https://cdn.jsdelivr.net/gh/aishasanuddin14/beranda_kategori_csv/csv/home_kategori.csv';
-
+  const CSV_URL_KATEGORI =
+    'https://cdn.jsdelivr.net/gh/aishasanuddin14/beranda_kategori_csv/csv/home_kategori.csv';
 
   function parseCSV(text) {
-    const lines = text.trim().split('\n');
-    const header = lines[0].split(',');
+    // Pecah per baris, buang yang kosong
+    const lines = text
+      .split('\n')
+      .map(function (l) { return l.trim(); })
+      .filter(function (l) { return l.length > 0; });
+
+    if (!lines.length) return [];
+
+    // Header pakai delimiter ;
+    const header = lines[0].split(';').map(function (h) { return h.trim(); });
+
     return lines.slice(1).map(function (line) {
-      const cols = line.split(',');
+      const cols = line.split(';');
       const obj = {};
+
       header.forEach(function (h, i) {
-        obj[h.trim()] = (cols[i] || '').trim();
+        obj[h] = (cols[i] || '').trim();
       });
+
       return obj;
     });
   }
 
   async function loadBerandaKategori() {
     try {
-      const res = await fetch(CSV_URL_KATEGORI);
+      const res = await fetch(CSV_URL_KATEGORI, { cache: 'no-cache' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+
       const text = await res.text();
       const data = parseCSV(text);
       renderKategori(data);
@@ -334,9 +345,8 @@ const CSV_URL_KATEGORI = 'https://cdn.jsdelivr.net/gh/aishasanuddin14/beranda_ka
     rows.forEach(function (row) {
       if (!row.name || !row.drive_image_id) return;
 
-      const img = 'https://drive.google.com/thumbnail?id=' +
-        row.drive_image_id +
-        '&sz=w600';
+      // drive_image_id di CSV kamu sudah berisi URL gambar full
+      const img = row.drive_image_id;
 
       const href = row.action_url || row.web_url || '#';
       const tagline = row.tagline || '';
@@ -454,7 +464,8 @@ const CSV_URL_KATEGORI = 'https://cdn.jsdelivr.net/gh/aishasanuddin14/beranda_ka
       'max-height:40vh;overflow:auto;background:#111;color:#ff0;' +
       'padding:8px;border-radius:8px;font:12px/1.4 monospace;z-index:99999';
     box.textContent =
-      'PROMISE: ' + (e.reason && e.reason.stack ? e.reason.stack : e.reason);
+      'PROMISE: ' +
+      (e.reason && e.reason.stack ? e.reason.stack : e.reason);
     document.body.appendChild(box);
   });
 })();
