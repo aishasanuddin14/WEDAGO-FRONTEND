@@ -296,8 +296,7 @@
   // =========================
   //  CSV LOADER KARTU BERANDA
   // =========================
-const CSV_URL_KATEGORI =
-  'https://cdn.jsdelivr.net/gh/aishasanuddin14/beranda_kategori_csv/home_kategori.csv';
+const CSV_URL_KATEGORI = 'https://cdn.jsdelivr.net/gh/aishasanuddin14/beranda_kategori_csv/csv/home_kategori.csv';
 // atau path yang kamu pakai bener2, kalau di dalam folder:
 // 'https://cdn.jsdelivr.net/gh/aishasanuddin14/beranda_kategori_csv/csv/home_kategori.csv';
 
