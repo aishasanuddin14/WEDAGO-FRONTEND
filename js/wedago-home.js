@@ -471,24 +471,3 @@
 })();
 
 
- // ===== DATA LOKAL (bisa nantinya diganti pipeline CSV) =====
-  const data = [
-    { name:'SNEKTAIM', action_url:'action://p/68a93cb680ac3', web_url:'https://jgjk.mobi/p/68a93cb680ac3', drive_image_id:'https://umkmdigital.app/api/listimage/v/SNEKTAIM-0-73568a93cb680ac3.jpg', rating:'4,9', kategori:'Kuliner' },
-    { name:'90 Derajat', action_url:'action://p/68a9696da1653', web_url:'https://jgjk.mobi/p/68a9696da1653', drive_image_id:'https://umkmdigital.app/api/listimage/v/90-Derajat-0-77268a9696da1653.jpg', rating:'4,8', kategori:'Kuliner' },
-    { name:'oneafreshealthy', action_url:'action://p/68e26afbd15b5', web_url:'https://jgjk.mobi/p/68e26afbd15b5', drive_image_id:'https://umkmdigital.app/api/listimage/v/oneafreshealthy-0-53768e26afbd15b5.jpg', rating:'4,8', kategori:'Kuliner' },
-    { name:'RUMAH SELADA WEDANA', action_url:'action://p/691560a3711a6', web_url:'https://jgjk.mobi/p/691560a3711a6', drive_image_id:'https://umkmdigital.app/api/listimage/v/RUMAH-SELADA-WEDANA--0-865691560a3711a6.jpg', rating:'4,8', kategori:'Fresh Mart' },
-    { name:'Tiga Putra', action_url:'action://p/68e1edd891fe7', web_url:'https://jgjk.mobi/p/68e1edd891fe7', drive_image_id:'https://umkmdigital.app/api/listimage/v/Tiga-Putra-0-35768e1edd891fe7.jpg', rating:'4,8', kategori:'Kuliner' },
-    { name:'Putryarisa', action_url:'action://p/68e1d29baa0da', web_url:'https://jgjk.mobi/p/68e1d29baa0da', drive_image_id:'https://umkmdigital.app/api/listimage/v/Putryarisa-0-88768e1d29baa0da.jpg', rating:'4,8', kategori:'Kuliner' },
-    { name:'LAPAK DAGING', action_url:'action://p/68d0e4a408af7', web_url:'https://jgjk.mobi/p/68d0e4a408af7', drive_image_id:'https://umkmdigital.app/api/listimage/v/LAPAL-DAGING-0-14768d0e4a408af7.jpg', rating:'4,8', kategori:'Fresh Mart' },
-    { name:'PENJUAL KEPITING', action_url:'action://p/68d0e3990564a', web_url:'https://jgjk.mobi/p/68d0e3990564a', drive_image_id:'https://umkmdigital.app/api/listimage/v/PENJUAL-KEPITING-0-66968d0e3990564a.jpg', rating:'4,8', kategori:'Fresh Mart' },
-    { name:'IKAN SEGAR', action_url:'action://p/68d0e38f330b2', web_url:'https://jgjk.mobi/p/68d0e38f330b2', drive_image_id:'https://umkmdigital.app/api/listimage/v/IKAN-SEGAR-0-25768d0e38f330b2.jpg', rating:'4,8', kategori:'Fresh Mart' },
-    { name:'IKAN TORE WOYO KLA', action_url:'action://p/68d0c7eb8871d', web_url:'https://jgjk.mobi/p/68d0c7eb8871d', drive_image_id:'https://umkmdigital.app/api/listimage/v/IKAN-TORE-WOYO-KLA-0-76268d0c7eb8871d.jpg', rating:'4,8', kategori:'UMKM' },
-    { name:'Were Creative', action_url:'action://p/68d0bf444e7f0', web_url:'https://jgjk.mobi/p/68d0bf444e7f0', drive_image_id:'https://umkmdigital.app/api/listimage/v/Were-Creative-0-58468d0bf444e7f0.jpg', rating:'4,8', kategori:'UMKM' },
-    { name:'Lapak Ci Ida', action_url:'action://p/68cbdfdc81d25', web_url:'https://jgjk.mobi/p/68cbdfdc81d25', drive_image_id:'https://umkmdigital.app/api/listimage/v/Lapak-Ci-Ida-0-43568cbdfdc81d25.jpg', rating:'4,8', kategori:'Fresh Mart' },
-    { name:'DPRCOFFEESTREET', action_url:'action://p/68cad7a9b5c4f', web_url:'https://jgjk.mobi/p/68cad7a9b5c4f', drive_image_id:'https://umkmdigital.app/api/listimage/v/DPRCOFFEESTREET--0-85968cad7a9b5c4f.jpg', rating:'4,8', kategori:'Kuliner' },
-    { name:'Teras Depan Kue Pia Weda', action_url:'action://p/68bf9289545fb', web_url:'https://jgjk.mobi/p/68bf9289545fb', drive_image_id:'https://umkmdigital.app/api/listimage/v/Teras-Depan-Kue-Pia-Weda-0-45968bf9289545fb.jpg', rating:'4,8', kategori:'Kuliner' },
-    { name:'Lapak Sayur Om Anto', action_url:'action://p/68ab375a0cfe3', web_url:'https://jgjk.mobi/p/68ab375a0cfe3', drive_image_id:'https://umkmdigital.app/api/listimage/v/Lapak-Sayur-Om-Anto-0-83768ab375a0cfe3.jpg', rating:'4,8', kategori:'Fresh Mart' },
-    { name:'PANGKALAN BUAH WEDA', action_url:'action://p/68ab33cc209cc', web_url:'https://jgjk.mobi/p/68ab33cc209cc', drive_image_id:'https://umkmdigital.app/api/listimage/v/PANGKALAN-BUAH-WEDA-0-38068ab33cc209cc.jpg', rating:'4,8', kategori:'Fresh Mart' },
-    { name:'Bengkel Kreatif Cogoipa', action_url:'action://p/68ab316503d2f', web_url:'https://jgjk.mobi/p/68ab316503d2f', drive_image_id:'https://umkmdigital.app/api/listimage/v/Bengkel-Kreatif-Cogoipa-0-70968ab316503d2f.jpg', rating:'4,8', kategori:'UMKM' }
-  ];
-
