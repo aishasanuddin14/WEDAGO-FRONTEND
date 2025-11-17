@@ -1,4 +1,9 @@
+
+/* ===============================
+   TOKENS GLOBAL & RESET
+   =============================== */
 :root{
+  /* Brand & utilitas */
   --wg-green: #01A532;
   --wg-green-dk: #0B6A2B;
   --wg-dark: #065f46;
@@ -9,31 +14,105 @@
   --wg-border: #E5E7EB;
   --wg-shadow: 0 4px 14px rgba(0,0,0,.08);
   --radius: 14px;
+  --spacing-unit: 1rem;
 
-  --fs-small:  clamp(0.68rem, 0.65rem + 0.18vw, 0.75rem);
-  --fs-base:   clamp(0.875rem, 0.84rem + 0.18vw, 0.94rem);
-  --fs-medium: clamp(1rem, 0.96rem + 0.18vw, 1.06rem);
-  --fs-large:  clamp(1.06rem, 1.02rem + 0.18vw, 1.12rem);
+  /* Floating Pill Nav */
+  --pill-bg: rgba(255,255,255,.85);
+  --pill-bd: rgba(17,24,39,.08);
+  --shadow-pill: 0 12px 30px rgba(0,0,0,.12);
+
+  /* Font sizes – responsif */
+  --fs-small:  clamp(0.6875rem, 0.65rem + 0.1875vw, 0.75rem);      /* ~11px */
+  --fs-base:   clamp(0.875rem, 0.8375rem + 0.1875vw, 0.9375rem);   /* ~14px */
+  --fs-medium: clamp(1rem, 0.9625rem + 0.1875vw, 1.0625rem);       /* ~16px */
+  --fs-large:  clamp(1.0625rem, 1.025rem + 0.1875vw, 1.125rem);    /* ~17px */
 }
 
-*{
-  box-sizing:border-box;
+* { box-sizing: border-box; }
+
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
-body{
-  margin:0;
-  background:#fff;
-  font-family:"Poppins", sans-serif;
-  color:var(--wg-dark);
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: var(--fs-base);
+  color: var(--wg-dark);
+  background: var(--wg-light);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-img{
-  max-width:100%;
-  display:block;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-a{
-  text-decoration:none;
-  color:inherit;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
-/* WedaGo Base Styles */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--wg-green);
+  outline-offset: 2px;
+}
+
+/* Untuk elemen tertentu (navbar item) tambahkan efek ekstra */
+.wg-fabnav__item:focus-visible {
+  box-shadow: 0 0 0 3px rgba(1,165,50,.25);
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+/* ===============================
+   SHELL APP & LAYOUT
+   =============================== */
+.wg-app {
+  width: 100%;
+  max-width: 26.25rem; /* 420px – mirip lebar ponsel */
+  margin: 0 auto;
+  padding-bottom: calc(4.875rem + env(safe-area-inset-bottom));
+  padding-left: var(--spacing-unit);
+  padding-right: var(--spacing-unit);
+  overflow-x: hidden;
+}
+
+main {
+  padding: var(--spacing-unit) 0;
+}
+
+.wg-section {
+  margin-top: calc(var(--spacing-unit) * 0.875);
+}
+
+.wg-card {
+  background: var(--wg-white);
+  border-radius: var(--radius);
+  box-shadow: var(--wg-shadow);
+}
+
+.wg-pad {
+  padding: var(--spacing-unit);
+}
