@@ -1,47 +1,209 @@
-/* QUICK SLIDER */
-.wg-quick-slider{
-  display:flex;
-  gap:12px;
-  overflow-x:auto;
-  padding:6px 2px;
-  scroll-snap-type:x mandatory;
+* ===============================
+   RESPONSIVE & MOTION REDUCE
+   =============================== */
+@media (max-width: 22.5rem) { /* ≤ 360px */
+  .wg-app {
+    padding-left: calc(var(--spacing-unit) * 0.875);
+    padding-right: calc(var(--spacing-unit) * 0.875);
+  }
+
+  main {
+    padding: 0.625rem 0;
+  }
+
+  .wg-menu {
+    gap: 0.75rem;
+  }
+
+  .wg-menu a {
+    padding: 0.5rem;
+    min-height: 5.375rem;
+  }
+
+  .wg-menu .wg-menu-ico {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .home-card img {
+    height: 8rem;
+  }
+
+  #homeList.list .home-card img {
+    width: 4.875rem;
+    height: 4.875rem;
+  }
+
+  .wg-fabnav {
+    width: 95%;
+    padding: 8px 10px;
+  }
 }
 
-.wg-new-item{
-  min-width:4.5rem;
-  flex:0 0 auto;
-  scroll-snap-align:start;
-  text-align:center;
+@media (prefers-reduced-motion: reduce) {
+  .wg-menu a,
+  .wg-hero__track,
+  .segpill__slider,
+  .wg-fabnav__item {
+    transition: none !important;
+  }
 }
 
-/* SEGMENTED PILL */
-.segpill{
-  display:flex;
-  gap:4px;
-  padding:4px;
-  border:1px solid var(--wg-border);
-  border-radius:999px;
+  
+  /* =========================================
+   WEDAGO TYPOGRAPHY FIX
+   Paksa konsistensi font di semua section
+   ========================================= */
+
+/* 1) Kunci jenis font di seluruh area .wg-app */
+.wg-app,
+.wg-app * {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
 }
 
-/* LIST / GRID / MASONRY */
-#homeList.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:1rem;
+/* 2) Base text (default semua teks) */
+.wg-app {
+  font-size: var(--fs-base);
+  line-height: 1.5;
 }
 
-#homeList.list{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+/* 3) Heading standar di dalam WedaGo */
+.wg-app h1,
+.wg-app h2,
+.wg-app h3,
+.wg-app h4,
+.wg-app h5,
+.wg-app h6 {
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--wg-dark);
 }
 
-#homeList.masonry{
-  column-count:2;
-  column-gap:1rem;
+/* Skala heading (boleh kamu sesuaikan, tapi ini versi aman) */
+.wg-app h1 { font-size: clamp(1.35rem, 1.25rem + 0.3vw, 1.5rem); }  /* judul besar */
+.wg-app h2 { font-size: var(--fs-large); }                          /* section title */
+.wg-app h3 { font-size: var(--fs-medium); }                         /* sub title */
+.wg-app h4,
+.wg-app h5,
+.wg-app h6 { font-size: var(--fs-base); }
+
+/* 4) Paragraf dan teks umum */
+.wg-app p,
+.wg-app li,
+.wg-app span,
+.wg-app label,
+.wg-app small {
+  font-size: var(--fs-base);
+  line-height: 1.5;
 }
 
-#homeList.masonry .home-card{
-  break-inside:avoid;
+/* Caption kecil (mis. label info, catatan halus) */
+.wg-app small {
+  font-size: var(--fs-small);
 }
 
+/* 5) Override untuk elemen yang memang harus lebih kecil / beda */
+
+/* Judul section utama di beranda (sama seperti sebelumnya) */
+.home-section-head h2 {
+  font-size: var(--fs-large);
+  font-weight: 800;
+}
+
+/* Judul kecil seperti "Pesan cepat", "Kategori pilihan" */
+.wg-sec-head h3 {
+  font-size: var(--fs-medium);
+  font-weight: 700;
+}
+
+/* Teks di menu grid – biarkan kecil & padat (tidak ikut fs-base) */
+.wg-menu a span {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Judul kartu produk */
+.home-card .name {
+  font-size: clamp(0.90625rem, 0.86875rem + 0.1875vw, 0.96875rem);
+  font-weight: 900;
+}
+
+/* Deskripsi kartu produk */
+.home-card .desc {
+  font-size: clamp(0.78125rem, 0.74375rem + 0.1875vw, 0.84375rem);
+}
+
+/* Meta info (rating, status buka) tetap kecil */
+.home-card .meta {
+  font-size: 0.75rem;
+}
+
+/* Wallet: angka saldo ditekankan sedikit */
+.wg-balance-chip {
+  font-size: var(--fs-small);
+}
+.wg-balance-amt {
+  font-size: var(--fs-medium);
+}
+.wg-balance-sub {
+  font-size: var(--fs-small);
+}
+
+/* Nav bawah label tetap mungil */
+.wg-fabnav__item {
+  font-size: 10px;
+}
+
+/* 6) Input, tombol, link di dalam .wg-app ikut sistem */
+.wg-app button,
+.wg-app input,
+.wg-app textarea,
+.wg-app select {
+  font: inherit;
+}
+.wg-app a {
+  font-size: inherit;
+}
+
+  /* === PATCH: Samakan tampilan link "Lihat Semua" === */
+.wg-link {
+  font-size: var(--fs-small);      /* lebih kecil dari teks utama */
+  font-weight: 600;                /* tidak setebal 800 lagi */
+  color: var(--wg-gray);           /* abu-abu lembut, tidak hijau terang */
+}
+
+/* Kalau mau warnanya sama persis dengan judul section, pakai ini sebagai ganti: */
+/* .wg-link { */
+  /* font-size: var(--fs-small); */
+  /* font-weight: 600; */
+  /* color: var(--wg-dark); */
+/* } */
+
+  .wg-hero-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.wg-hero-dots .dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,.55);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.wg-hero-dots .dot.active {
+  width: 20px;
+  border-radius: 6px;
+  background: #fff;
+}
