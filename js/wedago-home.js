@@ -296,8 +296,11 @@
   // =========================
   //  CSV LOADER KARTU BERANDA
   // =========================
-  const CSV_URL_KATEGORI =
-    'https://docs.google.com/spreadsheets/d/e/2PACX-1vQCuThDZFiGr_VlPAZTu8HNkLcNIhuiXzJksrbI-AOPBo08yKJqOQBXtEHN-YSFF5GrZ6ktD3S62YeE/pub?gid=0&single=true&output=csv';
+const CSV_URL_KATEGORI =
+  'https://cdn.jsdelivr.net/gh/aishasanuddin14/beranda_kategori_csv/home_kategori.csv';
+// atau path yang kamu pakai bener2, kalau di dalam folder:
+// 'https://cdn.jsdelivr.net/gh/aishasanuddin14/beranda_kategori_csv/csv/home_kategori.csv';
+
 
   function parseCSV(text) {
     const lines = text.trim().split('\n');
