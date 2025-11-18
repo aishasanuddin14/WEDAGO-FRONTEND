@@ -297,7 +297,8 @@
   //  CSV LOADER KARTU BERANDA
   // =========================
   const CSV_URL_KATEGORI =
-    'https://cdn.jsdelivr.net/gh/aishasanuddin14/beranda_kategori_csv/csv/home_kategori.csv';
+    'const CSV_URL_KATEGORI =
+  'https://cdn.jsdelivr.net/gh/aishasanuddin14/WEDAGO-FRONTEND/csv/beranda_kategori.csv';';
 
   function parseCSV(text) {
     // Pecah per baris, buang yang kosong
