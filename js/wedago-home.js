@@ -1,7 +1,4 @@
-(function () {
-  'use strict';
 
-  console.log('WEDAGO HOME JS – FINAL CSV WEDAGO-FRONTEND');
 
   // =========================
   //  INIT BERANDA (AMAN DI JAGEL)
