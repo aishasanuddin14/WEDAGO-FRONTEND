@@ -296,9 +296,10 @@
   // =========================
   //  CSV LOADER KARTU BERANDA
   // =========================
+
   const CSV_URL_KATEGORI =
-    'https://cdn.jsdelivr.net/gh/aishasanuddin14/WEDAGO-FRONTEND/csv/home_kategori.csv';
-  
+  'https://cdn.jsdelivr.net/gh/aishasanuddin14/WEDAGO-FRONTEND@main/csv/home_kategori.csv';
+
 
   function parseCSV(text) {
     const lines = text
