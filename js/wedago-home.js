@@ -302,31 +302,40 @@
 
 
   function parseCSV(text) {
-    const lines = text
-      .split('\n')
-      .map(function (l) {
-        return l.trim();
-      })
-      .filter(function (l) {
-        return l.length > 0;
-      });
-
-    if (!lines.length) return [];
-
-    // header pakai delimiter ;
-    const header = lines[0].split(';').map(function (h) {
-      return h.trim();
+  const lines = text
+    .split('\n')
+    .map(function (l) {
+      return l.trim();
+    })
+    .filter(function (l) {
+      return l.length > 0;
     });
 
-    return lines.slice(1).map(function (line) {
-      const cols = line.split(';');
-      const obj = {};
-      header.forEach(function (h, i) {
-        obj[h] = (cols[i] || '').trim();
-      });
-      return obj;
-    });
+  if (!lines.length) return [];
+
+  // === AUTO DETEK DELIMITER (; atau ,) ===
+  var headerLine = lines[0];
+  var delimiter = ';';
+
+  // Kalau tidak ada ';' tapi ada ',' → pakai koma
+  if (headerLine.indexOf(';') === -1 && headerLine.indexOf(',') !== -1) {
+    delimiter = ',';
   }
+
+  var header = headerLine.split(delimiter).map(function (h) {
+    return h.trim();
+  });
+
+  return lines.slice(1).map(function (line) {
+    var cols = line.split(delimiter);
+    var obj = {};
+    header.forEach(function (h, i) {
+      obj[h] = (cols[i] || '').trim();
+    });
+    return obj;
+  });
+}
+
 
   async function loadBerandaKategori() {
     try {
