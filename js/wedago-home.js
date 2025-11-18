@@ -4,9 +4,9 @@
   console.log('WEDAGO HOME JS – FINAL CSV WEDAGO-FRONTEND');
 
   // =========================
-  //  DOM READY INIT
+  //  INIT BERANDA (AMAN DI JAGEL)
   // =========================
-  document.addEventListener('DOMContentLoaded', function () {
+  function initHome() {
     const prefersReduce =
       window.matchMedia &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -32,7 +32,15 @@
 
     // Load data kartu dari CSV
     loadBerandaKategori();
-  });
+  }
+
+  // Kalau DOM masih loading → tunggu DOMContentLoaded
+  // Kalau sudah selesai → langsung jalankan initHome
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHome);
+  } else {
+    initHome();
+  }
 
   // =========================
   //  HERO SLIDER (SWIPE + DOTS)
