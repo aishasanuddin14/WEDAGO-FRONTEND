@@ -1,19 +1,19 @@
-name,action_url,web_url,drive_image_id,rating,kategori,jarak_km,status_buka
-oneafreshealthy,action://p/68e26afbd15b5,https://jgjk.mobi/p/68e26afbd15b5,https://umkmdigital.app/api/listimage/v/oneafreshealthy-0-53768e26afbd15b5.jpg,4.8,Fresh Mart,,Buka
-Tiga Putra,action://p/68e1edd891fe7,https://jgjk.mobi/p/68e1edd891fe7,https://umkmdigital.app/api/listimage/v/Tiga-Putra-0-35768e1edd891fe7.jpg,4.8,Kuliner,,Buka
-Putryarisa,action://p/68e1d29baa0da,https://jgjk.mobi/p/68e1d29baa0da,https://umkmdigital.app/api/listimage/v/Putryarisa-0-88768e1d29baa0da.jpg,4.8,UMKM,,Buka
-LAPAK DAGING,action://p/68d0e4a408af7,https://jgjk.mobi/p/68d0e4a408af7,https://umkmdigital.app/api/listimage/v/LAPAL-DAGING-0-14768d0e4a408af7.jpg,4.8,Fresh Mart,,Buka
-PENJUAL KEPITING,action://p/68d0e3990564a,https://jgjk.mobi/p/68d0e3990564a,https://umkmdigital.app/api/listimage/v/PENJUAL-KEPITING-0-66968d0e3990564a.jpg,4.8,Fresh Mart,,Buka
-IKAN SEGAR,action://p/68d0e38f330b2,https://jgjk.mobi/p/68d0e38f330b2,https://umkmdigital.app/api/listimage/v/IKAN-SEGAR-0-25768d0e38f330b2.jpg,4.8,Fresh Mart,,Buka
-IKAN TORE WOYO KLA,action://p/68d0c7eb8871d,https://jgjk.mobi/p/68d0c7eb8871d,https://umkmdigital.app/api/listimage/v/IKAN-TORE-WOYO-KLA-0-76268d0c7eb8871d.jpg,4.8,Fresh Mart,,Buka
-Were Creative,action://p/68d0bf444e7f0,https://jgjk.mobi/p/68d0bf444e7f0,https://umkmdigital.app/api/listimage/v/Were-Creative-0-58468d0bf444e7f0.jpg,4.8,UMKM,,Buka
-Antar Jemput Anak Sekolah,action://p/68cfcf084854e,https://jgjk.mobi/p/68cfcf084854e,https://umkmdigital.app/api/listimage/v/Antar-Jemput-Anak-Sekolah-0-62568cfcf084854e.jpg,4.8,UMKM,,Buka
-Lapak Ci Ida,action://p/68cbdfdc81d25,https://jgjk.mobi/p/68cbdfdc81d25,https://umkmdigital.app/api/listimage/v/Lapak-Ci-Ida-0-43568cbdfdc81d25.jpg,4.8,Kuliner,,Buka
-Ikan Segar,action://p/68cbdbe40843d,https://jgjk.mobi/p/68cbdbe40843d,https://umkmdigital.app/api/listimage/v/Ikan-Segar-0-50568cbdbe40843d.jpg,4.8,Fresh Mart,,Buka
-DPRCOFFEESTREET,action://p/68cad7a9b5c4f,https://jgjk.mobi/p/68cad7a9b5c4f,https://umkmdigital.app/api/listimage/v/DPRCOFFEESTREET--0-85968cad7a9b5c4f.jpg,4.8,Kuliner,,Buka
-Teras Depan Kue Pia Weda,action://p/68bf9289545fb,https://jgjk.mobi/p/68bf9289545fb,https://umkmdigital.app/api/listimage/v/Teras-Depan-Kue-Pia-Weda-0-45968bf9289545fb.jpg,4.8,Kuliner,,Buka
-Lapak Sayur Om Anto,action://p/68ab375a0cfe3,https://jgjk.mobi/p/68ab375a0cfe3,https://umkmdigital.app/api/listimage/v/Lapak-Sayur-Om-Anto-0-83768ab375a0cfe3.jpg,4.8,Fresh Mart,,Buka
-PANGKALAN BUAH WEDA,action://p/68ab33cc209cc,https://jgjk.mobi/p/68ab33cc209cc,https://umkmdigital.app/api/listimage/v/PANGKALAN-BUAH-WEDA-0-38068ab33cc209cc.jpg,4.8,Fresh Mart,,Buka
-Bengkel Kreatif Cogoipa,action://p/68ab316503d2f,https://jgjk.mobi/p/68ab316503d2f,https://umkmdigital.app/api/listimage/v/Bengkel-Kreatif-Cogoipa-0-70968ab316503d2f.jpg,4.8,UMKM,,Buka
-90 Derajat,action://p/68a9696da1653,https://jgjk.mobi/p/68a9696da1653,https://umkmdigital.app/api/listimage/v/90-Derajat-0-77268a9696da1653.jpg,4.8,Kuliner,,Buka
-SNEKTAIM,action://p/68a93cb680ac3,https://jgjk.mobi/p/68a93cb680ac3,https://umkmdigital.app/api/listimage/v/SNEKTAIM-0-73568a93cb680ac3.jpg,4.8,Kuliner,,Buka
+name;action_url;web_url;drive_image_id;rating;kategori;jarak_km;status_buka
+RUMAH SELADA WEDANA;action://p/691560a3711a6;https://jgjk.mobi/p/691560a3711a6;https://umkmdigital.app/api/listimage/v/RUMAH-SELADA-WEDANA--0-865691560a3711a6.jpg;4.9;Fresh;;Buka
+oneafreshealthy;action://p/68e26afbd15b5;https://jgjk.mobi/p/68e26afbd15b5;https://umkmdigital.app/api/listimage/v/oneafreshealthy-0-53768e26afbd15b5.jpg;4.9;Kuliner;;Buka
+Tiga Putra;action://p/68e1edd891fe7;https://jgjk.mobi/p/68e1edd891fe7;https://umkmdigital.app/api/listimage/v/Tiga-Putra-0-35768e1edd891fe7.jpg;4.3;Kuliner;;Buka
+Putryarisa;action://p/68e1d29baa0da;https://jgjk.mobi/p/68e1d29baa0da;https://umkmdigital.app/api/listimage/v/Putryarisa-0-88768e1d29baa0da.jpg;4.3;Kuliner;;Buka
+PENJUAL KEPITING;action://p/68d0e3990564a;https://jgjk.mobi/p/68d0e3990564a;https://umkmdigital.app/api/listimage/v/PENJUAL-KEPITING-0-66968d0e3990564a.jpg;4.3;Fresh;;Buka
+IKAN SEGAR;action://p/68d0e38f330b2;https://jgjk.mobi/p/68d0e38f330b2;https://umkmdigital.app/api/listimage/v/IKAN-SEGAR-0-25768d0e38f330b2.jpg;4.3;Fresh;;Buka
+IKAN TORE WOYO KLA;action://p/68d0c7eb8871d;https://jgjk.mobi/p/68d0c7eb8871d;https://umkmdigital.app/api/listimage/v/IKAN-TORE-WOYO-KLA-0-76268d0c7eb8871d.jpg;4.3;UMKM;;Buka
+Were Creative;action://p/68d0bf444e7f0;https://jgjk.mobi/p/68d0bf444e7f0;https://umkmdigital.app/api/listimage/v/Were-Creative-0-58468d0bf444e7f0.jpg;4.9;UMKM;;Buka
+Lapak Ci Ida;action://p/68cbdfdc81d25;https://jgjk.mobi/p/68cbdfdc81d25;https://umkmdigital.app/api/listimage/v/Lapak-Ci-Ida-0-43568cbdfdc81d25.jpg;4.3;Fresh;;Buka
+Ikan Segar;action://p/68cbdbe40843d;https://jgjk.mobi/p/68cbdbe40843d;https://umkmdigital.app/api/listimage/v/Ikan-Segar-0-50568cbdbe40843d.jpg;4.3;Fresh;;Buka
+DPRCOFFEESTREET;action://p/68cad7a9b5c4f;https://jgjk.mobi/p/68cad7a9b5c4f;https://umkmdigital.app/api/listimage/v/DPRCOFFEESTREET--0-85968cad7a9b5c4f.jpg;4.3;Kuliner;;Buka
+Teras Depan Kue Pia Weda;action://p/68bf9289545fb;https://jgjk.mobi/p/68bf9289545fb;https://umkmdigital.app/api/listimage/v/Teras-Depan-Kue-Pia-Weda-0-45968bf9289545fb.jpg;4.3;Kuliner;;Buka
+Lapak Sayur Om Anto;action://p/68ab375a0cfe3;https://jgjk.mobi/p/68ab375a0cfe3;https://umkmdigital.app/api/listimage/v/Lapak-Sayur-Om-Anto-0-83768ab375a0cfe3.jpg;4.3;Fresh;;Buka
+Demo Toko;action://p/68ab36b823ab7;https://jgjk.mobi/p/68ab36b823ab7;https://umkmdigital.app/api/listimage/v/HERBAL-WERE-0-29168ab36b823ab7.jpg;4.3;Fresh;;Buka
+PANGKALAN BUAH WEDA;action://p/68ab33cc209cc;https://jgjk.mobi/p/68ab33cc209cc;https://umkmdigital.app/api/listimage/v/PANGKALAN-BUAH-WEDA-0-38068ab33cc209cc.jpg;4.3;Fresh;;Buka
+Bengkel Kreatif Cogoipa;action://p/68ab316503d2f;https://jgjk.mobi/p/68ab316503d2f;https://umkmdigital.app/api/listimage/v/Bengkel-Kreatif-Cogoipa-0-70968ab316503d2f.jpg;4.9;UMKM;;Buka
+90 Derajat;action://p/68a9696da1653;https://jgjk.mobi/p/68a9696da1653;https://umkmdigital.app/api/listimage/v/90-Derajat-0-77268a9696da1653.jpg;4.9;Kuliner;;Buka
+SNEKTAIM;action://p/68a93cb680ac3;https://jgjk.mobi/p/68a93cb680ac3;https://umkmdigital.app/api/listimage/v/SNEKTAIM-0-73568a93cb680ac3.jpg;4.9;Kuliner;;Buka
