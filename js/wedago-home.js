@@ -354,75 +354,54 @@
   function renderKategori(rows) {
     const container = document.querySelector('#homeList');
     if (!container) return;
-
     container.innerHTML = '';
 
     rows.forEach(function (row) {
-      // dukung nama kolom: name / nama
-      const name = row.name || row.nama || '';
-      if (!name) return;
+        const name = row.name || row.nama || '';
+        if (!name) return;
 
-      // action_url / url_tindakan
-      const href =
-        row.action_url ||
-        row.url_tindakan ||
-        row.web_url ||
-        row.url_web ||
-        '#';
+        const href = row.action_url || row.url_tindakan || row.web_url || row.url_web || '#';
+        const img = row.drive_image_id || row.id_gambar_drive || 'https://via.placeholder.com/600x400?text=WedaGo';
+        const tagline = row.tagline || '';
+        const ratingRaw = row.rating || row.nilai || '';
+        const rating = ratingRaw ? '⭐ ' + ratingRaw : '';
+        const jarakRaw = row.jarak_km || row.jarak || '';
+        const jarak = jarakRaw ? jarakRaw + ' km' : '';
+        const status = row.status_buka || row.status || '';
+        const kategori = row.kategori || row.category || row.kategori_pilihan || '';
 
-      // drive_image_id / id_gambar_drive (di CSV kamu bentuknya sudah full URL)
-      const img =
-        row.drive_image_id ||
-        row.id_gambar_drive ||
-        'https://via.placeholder.com/600x400?text=WedaGo';
-
-      const tagline = row.tagline || '';
-      const ratingRaw = row.rating || row.nilai || '';
-      const rating = ratingRaw ? '⭐ ' + ratingRaw : '';
-      const jarakRaw = row.jarak_km || row.jarak || '';
-      const jarak = jarakRaw ? jarakRaw + ' km' : '';
-      const status = row.status_buka || row.status || '';
-      const kategori =
-        row.kategori || row.category || row.kategori_pilihan || '';
-
-      const art = document.createElement('article');
-      art.className = 'home-card ' + catClass(kategori);
-
-      art.innerHTML =
-        '<a href="' +
-        href +
-        '">' +
-        '<img src="' +
-        img +
-        '" alt="' +
-        name +
-        '">' +
-        '<div class="body">' +
-        '<h3 class="name">' +
-        name +
-        '</h3>' +
-        '<p class="desc">' +
-        tagline +
-        '</p>' +
-        '<div class="meta">' +
-        (rating ? '<span>' + rating + '</span>' : '') +
-        (jarak ? '<span>' + jarak + '</span>' : '') +
-        (status ? '<span>' + status + '</span>' : '') +
-        '</div>' +
-        '</div>' +
-        '</a>';
-
-      container.appendChild(art);
+        const art = document.createElement('article');
+        art.className = 'home-card ' + catClass(kategori);
+        art.innerHTML = `
+            <a href="${href}">
+                <img src="${img}" alt="${name}">
+                <div class="body">
+                    <h3 class="name">${name}</h3>
+                    <p class="desc">${tagline}</p>
+                    <div class="meta">
+                        ${rating ? '<span>' + rating + '</span>' : ''}
+                        ${jarak ? '<span>' + jarak + '</span>' : ''}
+                        ${status ? '<span>' + status + '</span>' : ''}
+                    </div>
+                </div>
+            </a>`;
+        container.appendChild(art);
     });
 
-    if (typeof window.homeSetCategory === 'function') {
-      const activeBtn = document.querySelector(
-        '#segKategori .segpill__btn.active'
-      );
-      const cat = activeBtn ? activeBtn.dataset.cat : 'kuliner';
-      window.homeSetCategory(cat);
+    // === PERBAIKAN DI SINI ===
+    // Jangan langsung filter kategori saat render selesai
+    // Biarkan semua card tampil dulu, nanti segmented pill yang akan filter
+    // Cukup pastikan kategori default sesuai pill pertama atau yang active
+    const firstPill = document.querySelector('#segKategori .segpill__btn');
+    if (firstPill) {
+        const defaultCat = firstPill.dataset.cat || 'kuliner';
+        // Force set ke kategori pertama (biasanya kuliner)
+        window.homeSetCategory(''); // tampilkan semua dulu (opsional)
+        setTimeout(() => {
+            window.homeSetCategory(defaultCat);
+        }, 100); // kasih jeda kecil biar initSegKategori() sempat nambahin class active
     }
-  }
+}
 
   // =========================
   //  ROUTER RINGAN + BACK
