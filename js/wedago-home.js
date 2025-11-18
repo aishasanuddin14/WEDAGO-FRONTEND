@@ -1,6 +1,8 @@
 (function () {
   'use strict';
 
+  console.log('WEDAGO HOME JS – FINAL CSV WEDAGO-FRONTEND');
+
   // =========================
   //  DOM READY INIT
   // =========================
@@ -36,10 +38,10 @@
   //  HERO SLIDER (SWIPE + DOTS)
   // =========================
   function setupHeroSlider(options) {
-    const hero  = document.getElementById('wgHero');
+    const hero = document.getElementById('wgHero');
     const track = document.getElementById('wgHeroTrack');
     const slides = track ? track.querySelectorAll('.wg-slide') : [];
-    const dots   = document.querySelectorAll('#wgHeroDots button');
+    const dots = document.querySelectorAll('#wgHeroDots button');
 
     if (!hero || !track || slides.length <= 1 || dots.length !== slides.length) {
       return;
@@ -52,7 +54,7 @@
 
     function goTo(i) {
       index = (i + slides.length) % slides.length;
-      track.style.transform = 'translateX(-' + (index * 100) + '%)';
+      track.style.transform = 'translateX(-' + index * 100 + '%)';
       dots.forEach(function (d, idx) {
         d.classList.toggle('is-active', idx === index);
       });
@@ -101,7 +103,7 @@
       const delta = currentX - startX;
       const pct = (delta / hero.clientWidth) * 100;
       track.style.transform =
-        'translateX(calc(-' + (index * 100) + '% + ' + pct + '%))';
+        'translateX(calc(-' + index * 100 + '% + ' + pct + '%))';
     }
 
     function onEnd() {
@@ -113,7 +115,7 @@
         if (delta < 0) next();
         else goTo(index - 1);
       } else {
-        goTo(index); // balik ke posisi awal
+        goTo(index);
       }
       startAutoplay();
     }
@@ -125,7 +127,6 @@
     window.addEventListener('mousemove', onMove);
     window.addEventListener('mouseup', onEnd);
 
-    // Mulai
     goTo(0);
     startAutoplay();
   }
@@ -289,7 +290,6 @@
       }
     });
 
-    // Default: index 0 (misal: Kuliner)
     setActive(0);
   }
 
@@ -297,29 +297,31 @@
   //  CSV LOADER KARTU BERANDA
   // =========================
   const CSV_URL_KATEGORI =
-    'const CSV_URL_KATEGORI =
-  'https://cdn.jsdelivr.net/gh/aishasanuddin14/WEDAGO-FRONTEND/csv/beranda_kategori.csv';';
+    'https://cdn.jsdelivr.net/gh/aishasanuddin14/WEDAGO-FRONTEND/csv/beranda_kategori.csv';
 
   function parseCSV(text) {
-    // Pecah per baris, buang yang kosong
     const lines = text
       .split('\n')
-      .map(function (l) { return l.trim(); })
-      .filter(function (l) { return l.length > 0; });
+      .map(function (l) {
+        return l.trim();
+      })
+      .filter(function (l) {
+        return l.length > 0;
+      });
 
     if (!lines.length) return [];
 
-    // Header pakai delimiter ;
-    const header = lines[0].split(';').map(function (h) { return h.trim(); });
+    // header pakai delimiter ;
+    const header = lines[0].split(';').map(function (h) {
+      return h.trim();
+    });
 
     return lines.slice(1).map(function (line) {
       const cols = line.split(';');
       const obj = {};
-
       header.forEach(function (h, i) {
         obj[h] = (cols[i] || '').trim();
       });
-
       return obj;
     });
   }
@@ -331,6 +333,7 @@
 
       const text = await res.text();
       const data = parseCSV(text);
+      console.log('WEDAGO – rows CSV:', data.length);
       renderKategori(data);
     } catch (err) {
       console.error('Gagal load kategori:', err);
@@ -344,38 +347,63 @@
     container.innerHTML = '';
 
     rows.forEach(function (row) {
-      if (!row.name || !row.drive_image_id) return;
+      // dukung nama kolom: name / nama
+      const name = row.name || row.nama || '';
+      if (!name) return;
 
-      // drive_image_id di CSV kamu sudah berisi URL gambar full
-      const img = row.drive_image_id;
+      // action_url / url_tindakan
+      const href =
+        row.action_url ||
+        row.url_tindakan ||
+        row.web_url ||
+        row.url_web ||
+        '#';
 
-      const href = row.action_url || row.web_url || '#';
+      // drive_image_id / id_gambar_drive (di CSV kamu bentuknya sudah full URL)
+      const img =
+        row.drive_image_id ||
+        row.id_gambar_drive ||
+        'https://via.placeholder.com/600x400?text=WedaGo';
+
       const tagline = row.tagline || '';
-      const rating = row.rating ? '⭐ ' + row.rating : '';
-      const jarak = row.jarak_km ? row.jarak_km + ' km' : '';
-      const status = row.status_buka || '';
-      const kategori = row.kategori || row.category || '';
+      const ratingRaw = row.rating || row.nilai || '';
+      const rating = ratingRaw ? '⭐ ' + ratingRaw : '';
+      const jarakRaw = row.jarak_km || row.jarak || '';
+      const jarak = jarakRaw ? jarakRaw + ' km' : '';
+      const status = row.status_buka || row.status || '';
+      const kategori =
+        row.kategori || row.category || row.kategori_pilihan || '';
 
       const art = document.createElement('article');
       art.className = 'home-card ' + catClass(kategori);
+
       art.innerHTML =
-        '<a href="' + href + '">' +
-          '<img src="' + img + '" alt="' + row.name + '">' +
-          '<div class="body">' +
-            '<h3 class="name">' + row.name + '</h3>' +
-            '<p class="desc">' + tagline + '</p>' +
-            '<div class="meta">' +
-              (rating ? '<span>' + rating + '</span>' : '') +
-              (jarak ? '<span>' + jarak + '</span>' : '') +
-              (status ? '<span>' + status + '</span>' : '') +
-            '</div>' +
-          '</div>' +
+        '<a href="' +
+        href +
+        '">' +
+        '<img src="' +
+        img +
+        '" alt="' +
+        name +
+        '">' +
+        '<div class="body">' +
+        '<h3 class="name">' +
+        name +
+        '</h3>' +
+        '<p class="desc">' +
+        tagline +
+        '</p>' +
+        '<div class="meta">' +
+        (rating ? '<span>' + rating + '</span>' : '') +
+        (jarak ? '<span>' + jarak + '</span>' : '') +
+        (status ? '<span>' + status + '</span>' : '') +
+        '</div>' +
+        '</div>' +
         '</a>';
 
       container.appendChild(art);
     });
 
-    // Setelah render, terapkan filter sesuai pill aktif (kalau ada)
     if (typeof window.homeSetCategory === 'function') {
       const activeBtn = document.querySelector(
         '#segKategori .segpill__btn.active'
@@ -470,5 +498,3 @@
     document.body.appendChild(box);
   });
 })();
-
-
