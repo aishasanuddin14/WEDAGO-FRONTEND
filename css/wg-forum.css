@@ -321,3 +321,31 @@
   color: #01A532;
 }
 
+/* Footer Butuh Cepat */
+#butuh-cepat .wg-post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+/* Badge baru */
+#butuh-cepat .bc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(24,119,242,0.06);
+  border: 1px solid rgba(24,119,242,0.18);
+  color: #0b3a86;
+}
+
+/* Sumber */
+#butuh-cepat .bc-source {
+  font-size: 10px;
+  font-weight: 600;
+  color: #01A532;
+}
+
