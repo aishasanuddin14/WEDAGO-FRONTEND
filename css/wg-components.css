@@ -10,6 +10,8 @@ header.wg-header {
   will-change: transform;
 }
 
+
+
 .wg-header__bar {
   height: 3.5rem;
   display: flex;
@@ -294,6 +296,42 @@ header.wg-header {
   gap: 10px;
 }
 
+.wg-section-menu {
+  padding: 12px 0;
+}
+
+.wg-menu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.wg-menu a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  padding: 12px 6px;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  color: #222;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.wg-menu a span {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.wg-menu-ico {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
 
 /* ===== ITEM MENU ===== */
