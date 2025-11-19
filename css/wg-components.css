@@ -784,3 +784,345 @@ header.wg-header {
   text-overflow: unset;
   max-width: unset;
 }
+
+
+
+
+
+    :root {
+        --wg-blue: #1877f2;
+        --wg-green: #25d366;
+        --wg-bg: #e9ebee;
+        --wg-card-bg: #ffffff;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: var(--wg-bg);
+        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #111;
+    }
+
+    /* HEADER HALAMAN */
+    .page-header {
+        background: #01A532;
+        color: #fff;
+        padding: 14px;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .page-header-title {
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .page-header-sub {
+        font-size: 12px;
+        opacity: 0.9;
+        margin-top: 2px;
+    }
+
+    :root {
+    --wg-green-main: #01A532;
+    --wg-blue: #1877f2;
+    --wg-green: #25d366;
+    --wg-bg: #f2f3f5;
+    --wg-card-bg: #ffffff;
+}
+
+/* GLOBAL BODY */
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--wg-bg);
+    font-family: "Arial", sans-serif;
+    color: #111;
+}
+
+/* HEADER FORUM */
+.page-header {
+    background: var(--wg-green-main);
+    color: #fff;
+    padding: 14px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.header-post-btn {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffffff;
+    color: #01A532;
+    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.page-header-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.page-header-sub {
+    font-size: 12px;
+    opacity: 0.95;
+    margin-top: 2px;
+    font-weight: 400;
+}
+
+
+    /* GENERIC SECTION WRAPPER */
+    .wg-section {
+        padding: 12px 10px 24px;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    .wg-section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 6px;
+    }
+
+    .wg-section-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .wg-section-badge {
+        font-size: 11px;
+        padding: 4px 8px;
+        border-radius: 999px;
+        border: 1px solid rgba(0,0,0,0.12);
+        background: rgba(255,255,255,0.9);
+    }
+
+    .wg-section-desc {
+        font-size: 12px;
+        color: #555;
+        margin-bottom: 8px;
+    }
+
+    .section-spacing {
+        height: 8px;
+    }
+
+    /* ========================= */
+    /* SECTION 1: BUTUH CEPAT    */
+    /* ========================= */
+
+    .bc-wrapper {
+        background: #f5f6f7;
+        border-radius: 10px;
+        padding: 8px 6px 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    }
+
+    .bc-feed-frame {
+        height: 260px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .bc-feed {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        animation: bcScrollUp 30s linear infinite;
+    }
+
+    @keyframes bcScrollUp {
+        0%   { transform: translateY(0); }
+        100% { transform: translateY(-50%); }
+    }
+
+    .bc-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .wg-post {
+        position: relative;
+        background: var(--wg-card-bg);
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+    }
+
+    .wg-post-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 6px;
+    }
+
+    .wg-avatar {
+        width: 36px;
+        height: 36px;
+        background: #d8d8d8;
+        border-radius: 50%;
+        margin-right: 8px;
+        flex-shrink: 0;
+    }
+
+    .wg-user-name {
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .wg-time {
+        font-size: 11px;
+        color: #666;
+        margin-top: 2px;
+    }
+
+    .wg-tag {
+        background: var(--wg-blue);
+        color: #fff;
+        font-size: 11px;
+        padding: 2px 6px;
+        border-radius: 6px;
+        margin-left: 4px;
+    }
+
+    .wg-text {
+        margin: 6px 0 8px;
+        font-size: 13px;
+        line-height: 1.4rem;
+    }
+
+    .wg-wa-btn {
+        display: inline-block;
+        background: var(--wg-green);
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .wg-sec-badge {
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        font-size: 10px;
+        padding: 2px 7px;
+        border-radius: 999px;
+        background: rgba(24,119,242,0.08);
+        color: #0b3a86;
+        border: 1px solid rgba(24,119,242,0.2);
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+    }
+
+    .wg-source {
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #555;
+    }
+
+    /* ========================= */
+    /* SECTION 2: TANPA TOKO     */
+    /* ========================= */
+
+    .tt-wrapper {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        overflow: hidden;
+    }
+
+    .tt-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+
+    .tt-subtitle {
+        font-size: 13px;
+        color: #777;
+        margin-bottom: 10px;
+    }
+
+    .tt-slider {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    .tt-slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Card full width mengikuti halaman section */
+    .tt-card {
+        min-width: 100%;
+        max-width: 100%;
+        background: #fff;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+        flex-shrink: 0;
+        position: relative;
+    }
+
+    .tt-img-wrap {
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+        background: #ddd;
+    }
+
+    .tt-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .tt-sec-badge {
+        position: absolute;
+        top: 8px;
+        left: 10px;
+        background: rgba(0,0,0,0.7);
+        color: #fff;
+        font-size: 11px;
+        padding: 3px 9px;
+        border-radius: 999px;
+    }
+
+    .tt-caption {
+        padding: 10px;
+    }
+
+    .tt-user {
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .tt-time {
+        font-size: 11px;
+        color: #555;
+    }
+
+    .tt-text {
+        margin-top: 4px;
+        font-size: 13px;
+        line-height: 1.4rem;
+    }
