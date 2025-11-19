@@ -1,310 +1,189 @@
-  :root {
-        --wg-blue: #1877f2;
-        --wg-green: #25d366;
-        --wg-bg: #e9ebee;
-        --wg-card-bg: #ffffff;
-    }
+/* ========================= */
+/*   WRAPPER & HEADER FORUM  */
+/* ========================= */
 
-    body {
-        margin: 0;
-        padding: 0;
-        background: var(--wg-bg);
-        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        color: #111;
-    }
-
-    /* HEADER HALAMAN */
-    .page-header {
-        background: #01A532;
-        color: #fff;
-        padding: 14px;
-        text-align: center;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
-
-    .page-header-title {
-        font-size: 20px;
-        font-weight: 600;
-        letter-spacing: 1px;
-    }
-
-    .page-header-sub {
-        font-size: 12px;
-        opacity: 0.9;
-        margin-top: 2px;
-    }
-
-    :root {
-    --wg-green-main: #01A532;
-    --wg-blue: #1877f2;
-    --wg-green: #25d366;
-    --wg-bg: #f2f3f5;
-    --wg-card-bg: #ffffff;
+#forum {
+  margin-top: 12px;
 }
 
-/* GLOBAL BODY */
-body {
-    margin: 0;
-    padding: 0;
-    background: var(--wg-bg);
-    font-family: "Arial", sans-serif;
-    color: #111;
+/* Header hijau FORUM hanya di dalam #forum */
+#forum .page-header {
+  background: #01A532;
+  color: #fff;
+  padding: 14px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  border-radius: 10px;
 }
 
-/* HEADER FORUM */
-.page-header {
-    background: var(--wg-green-main);
-    color: #fff;
-    padding: 14px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+/* Tombol POSTING di header */
+#forum .header-post-btn {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  color: #01A532;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
 }
 
-.header-post-btn {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #ffffff;
-    color: #01A532;
-    font-size: 13px;
-    padding: 6px 10px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+#forum .page-header-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-.page-header-title {
-    font-size: 20px;
-    font-weight: 700;
+#forum .page-header-sub {
+  font-size: 12px;
+  opacity: 0.95;
+  margin-top: 2px;
+  font-weight: 400;
 }
 
-.page-header-sub {
-    font-size: 12px;
-    opacity: 0.95;
-    margin-top: 2px;
-    font-weight: 400;
-}
-
-
-    /* GENERIC SECTION WRAPPER */
-    .wg-section {
-        padding: 12px 10px 24px;
-        max-width: 720px;
-        margin: 0 auto;
-    }
-
-    .wg-section-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 6px;
-    }
-
-    .wg-section-title {
-        font-size: 18px;
-        font-weight: 600;
-    }
-
-    .wg-section-badge {
-        font-size: 11px;
-        padding: 4px 8px;
-        border-radius: 999px;
-        border: 1px solid rgba(0,0,0,0.12);
-        background: rgba(255,255,255,0.9);
-    }
-
-    .wg-section-desc {
-        font-size: 12px;
-        color: #555;
-        margin-bottom: 8px;
-    }
-
-    .section-spacing {
-        height: 8px;
-    }
-
-    /* ========================= */
-    /* SECTION 1: BUTUH CEPAT    */
-    /* ========================= */
-
-    .bc-wrapper {
-        background: #f5f6f7;
-        border-radius: 10px;
-        padding: 8px 6px 10px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-    }
-
-    .bc-feed-frame {
-        height: 260px;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .bc-feed {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        animation: bcScrollUp 30s linear infinite;
-    }
-
-    @keyframes bcScrollUp {
-        0%   { transform: translateY(0); }
-        100% { transform: translateY(-50%); }
-    }
-
-    .bc-inner {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .wg-post {
-        position: relative;
-        background: var(--wg-card-bg);
-        border-radius: 10px;
-        padding: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.12);
-    }
-
-    .wg-post-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 6px;
-    }
-
-    .wg-avatar {
-        width: 36px;
-        height: 36px;
-        background: #d8d8d8;
-        border-radius: 50%;
-        margin-right: 8px;
-        flex-shrink: 0;
-    }
-
-    .wg-user-name {
-        font-weight: 600;
-        font-size: 14px;
-    }
-
-    .wg-time {
-        font-size: 11px;
-        color: #666;
-        margin-top: 2px;
-    }
-
-    .wg-tag {
-        background: var(--wg-blue);
-        color: #fff;
-        font-size: 11px;
-        padding: 2px 6px;
-        border-radius: 6px;
-        margin-left: 4px;
-    }
-
-    .wg-text {
-        margin: 6px 0 8px;
-        font-size: 13px;
-        line-height: 1.4rem;
-    }
-
-    .wg-wa-btn {
-        display: inline-block;
-        background: var(--wg-green);
-        color: #fff;
-        padding: 6px 10px;
-        border-radius: 6px;
-        text-decoration: none;
-        font-size: 13px;
-        font-weight: 600;
-    }
-
-    .wg-sec-badge {
-        position: absolute;
-        top: 8px;
-        right: 10px;
-        font-size: 10px;
-        padding: 2px 7px;
-        border-radius: 999px;
-        background: rgba(24,119,242,0.08);
-        color: #0b3a86;
-        border: 1px solid rgba(24,119,242,0.2);
-        display: inline-flex;
-        align-items: center;
-        gap: 3px;
-    }
-
-    .wg-source {
-        font-size: 9px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        color: #555;
-    }
-
-    /* ========================= */
-    /* SECTION 2: TANPA TOKO     */
-    /* ========================= */
-
-    .tt-wrapper {
-        background: #ffffff;
-        border-radius: 12px;
-        padding: 10px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-        overflow: hidden;
-    }
-
-    .tt-title {
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 4px;
-    }
-
-    .tt-subtitle {
-        font-size: 13px;
-        color: #777;
-        margin-bottom: 10px;
-    }
-
-    .tt-slider {
-        display: flex;
-        gap: 12px;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        scrollbar-width: none;
-    }
-
-    .tt-slider::-webkit-scrollbar {
-        display: none;
-    }
-
-    /* Card full width mengikuti halaman section */
-    .tt-card {
-        min-width: 100%;
-        max-width: 100%;
-        background: #fff;
-        border-radius: 14px;
-        overflow: hidden;
-        box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-        flex-shrink: 0;
-        position: relative;
-    }
-
-    
-
+/* Sedikit rapikan padding section forum agar konsisten */
 .wg-section#butuh-cepat,
 .wg-section#tanpa-toko {
   padding-left: 12px;
   padding-right: 12px;
 }
 
+/* ========================= */
+/*  SECTION 1: BUTUH CEPAT   */
+/* ========================= */
 
- /* ===================== */
-/*  TANPA TOKO – FORUM   */
-/* ===================== */
+#butuh-cepat .bc-wrapper {
+  background: #f5f6f7;
+  border-radius: 10px;
+  padding: 8px 6px 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
 
-/* Bungkus utama */
+#butuh-cepat .bc-feed-frame {
+  height: 260px;
+  overflow: hidden;
+  position: relative;
+}
+
+#butuh-cepat .bc-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: bcScrollUp 30s linear infinite;
+}
+
+#butuh-cepat .bc-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Kartu postingan */
+#butuh-cepat .wg-post {
+  position: relative;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+}
+
+#butuh-cepat .wg-post-header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+#butuh-cepat .wg-avatar {
+  width: 36px;
+  height: 36px;
+  background: #d8d8d8;
+  border-radius: 50%;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+#butuh-cepat .wg-user-name {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* TAG (Kurir, Kosan, dst) */
+#butuh-cepat .wg-tag {
+  position: static;
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #1877f2;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* Waktu + lokasi + sumber */
+#butuh-cepat .wg-time {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  color: #777;
+}
+
+#butuh-cepat .wg-source {
+  display: inline;
+  margin-left: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #01A532;
+}
+
+/* Badge kecil di pojok kanan atas kartu */
+#butuh-cepat .wg-sec-badge {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(24,119,242,0.08);
+  color: #0b3a86;
+  border: 1px solid rgba(24,119,242,0.2);
+}
+
+/* Isi teks kebutuhan */
+#butuh-cepat .wg-text {
+  margin: 6px 0 8px;
+  font-size: 13px;
+  line-height: 1.4rem;
+}
+
+/* Tombol WA */
+#butuh-cepat .wg-wa-btn {
+  display: inline-block;
+  background: #25d366;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Animasi scroll vertikal */
+@keyframes bcScrollUp {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* ========================= */
+/*  SECTION 2: TANPA TOKO    */
+/* ========================= */
+
 #tanpa-toko .tt-wrapper {
   background: #ffffff;
   border-radius: 18px;
@@ -312,7 +191,7 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-/* Judul kecil dalam kartu */
+/* Judul kecil di dalam kartu */
 #tanpa-toko .tt-title {
   font-size: 15px;
   font-weight: 700;
@@ -325,7 +204,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* Slider horizontal simpel */
+/* Slider horizontal */
 #tanpa-toko .tt-slider {
   display: flex;
   flex-direction: row;
@@ -336,148 +215,6 @@ body {
   scrollbar-width: none;
 }
 
-#tanpa-toko .tt-slider::-webkit-scrollbar {
-  display: none;
-}
-
-/* Kartu item */
-#tanpa-toko .tt-card {
-  background: #ffffff;
-  border-radius: 16px;
-  flex-shrink: 0;
-  width: 230px;              /* biar pas di layar hp */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Gambar */
-#tanpa-toko .tt-img-wrap {
-  width: 100%;
-  height: 130px;
-  overflow: hidden;
-}
-
-#tanpa-toko .tt-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Badge hitam di atas gambar */
-#tanpa-toko .tt-sec-badge {
-  position: absolute;
-  top: 8px;
-  left: 10px;
-  font-size: 10px;
-  padding: 3px 8px;
-  border-radius: 999px;
-  background: rgba(0,0,0,0.75);
-  color: #fff;
-}
-
-/* Caption bawah gambar */
-#tanpa-toko .tt-caption {
-  padding: 8px 10px 10px;
-}
-
-/* Paksa semua isi caption blok rapi, bukan nabrak-nabrak */
-#tanpa-toko .tt-caption * {
-  display: block;
-  white-space: normal;
-}
-
-/* Typografi konsisten */
-#tanpa-toko .tt-user {
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 2px;
-}
-
-#tanpa-toko .tt-time {
-  font-size: 11px;
-  color: #888;
-  margin-bottom: 4px;
-}
-
-#tanpa-toko .tt-text {
-  font-size: 12px;
-  line-height: 1.4rem;
-  color: #444;
-}
-
-/* ======== PATCH FORUM: BUTUH CEPAT ========= */
-
-/* Biar layout header postingan rapih */
-#butuh-cepat .wg-post-header {
-  align-items: flex-start;
-}
-
-/* Nama + tag disusun rapih */
-#butuh-cepat .wg-user-name {
-  display: inline-block;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-/* TAG (Kurir, Kosan, dll) – pill kecil tapi tidak melompat */
-#butuh-cepat .wg-tag {
-  position: static !important;
-  display: inline-block;
-  margin-left: 4px;
-  margin-top: 0;
-  font-size: 11px;
-  padding: 2px 8px;
-  border-radius: 999px;
-  white-space: nowrap;
-}
-
-/* Baris waktu + sumber dibuat 1 baris sederhana di bawah nama */
-#butuh-cepat .wg-time {
-  display: block;
-  margin-top: 2px;
-  font-size: 11px;
-  color: #777;
-}
-
-/* Sumber (Facebook / Langsung / WhatsApp) jangan ikut style badge lain */
-#butuh-cepat .wg-source {
-  position: static !important;
-  display: inline;
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  margin-left: 4px;
-  font-size: 11px;
-  font-weight: 600;
-  color: #01A532;
-  text-transform: none;
-}
-
-/* ======== PATCH FORUM: TANPA TOKO ========= */
-
-/* Bungkus utama Tanpa Toko biar mirip kartu beranda lain */
-#tanpa-toko .tt-wrapper {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-
-/* Slider: tetap horizontal, tapi rapi */
-#tanpa-toko .tt-slider {
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding-bottom: 6px;
-  scrollbar-width: none;
-}
 #tanpa-toko .tt-slider::-webkit-scrollbar {
   display: none;
 }
@@ -501,6 +238,7 @@ body {
   height: 130px;
   overflow: hidden;
 }
+
 #tanpa-toko .tt-img-wrap img {
   width: 100%;
   height: 100%;
@@ -520,10 +258,12 @@ body {
   color: #fff;
 }
 
-/* Caption bawah gambar – teks tidak boleh nabrak */
+/* Caption di bawah gambar */
 #tanpa-toko .tt-caption {
   padding: 8px 10px 10px;
 }
+
+/* Biar teks tidak nabrak dan boleh turun baris */
 #tanpa-toko .tt-caption * {
   display: block;
   white-space: normal;
@@ -532,15 +272,17 @@ body {
 #tanpa-toko .tt-user {
   font-size: 13px;
   font-weight: 700;
+  margin-bottom: 2px;
 }
+
 #tanpa-toko .tt-time {
   font-size: 11px;
   color: #777;
-  margin-top: 2px;
+  margin-bottom: 4px;
 }
+
 #tanpa-toko .tt-text {
   font-size: 12px;
-  color: #444;
-  margin-top: 4px;
   line-height: 1.4rem;
+  color: #444;
 }
