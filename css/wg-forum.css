@@ -340,3 +340,22 @@ body {
   padding-left: 12px;
   padding-right: 12px;
 }
+<section class="wg-section" id="tanpa-toko">
+  <div class="wg-section-header">
+    <div class="wg-section-title">Tanpa Toko</div>
+    <div class="wg-section-badge">Feed Foto</div>
+  </div>
+
+  <div class="wg-section-desc">
+    Promo, makanan, jasa — tanpa harus punya toko.
+  </div>
+
+  <div class="tt-wrapper">
+    <div class="tt-title">Tanpa Toko</div>
+    <div class="tt-subtitle">Promo, makanan, jasa — kirim foto, kami posting!</div>
+
+    <div class="tt-slider" id="ttSlider">
+      <!-- tt-card 1,2,3,4 ... -->
+    </div>
+  </div>
+</section>
