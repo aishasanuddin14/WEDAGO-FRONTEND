@@ -335,3 +335,8 @@ body {
         font-size: 13px;
         line-height: 1.4rem;
     }
+.wg-section#butuh-cepat,
+.wg-section#tanpa-toko {
+  padding-left: 12px;
+  padding-right: 12px;
+}
