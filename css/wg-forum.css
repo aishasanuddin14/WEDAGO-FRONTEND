@@ -292,4 +292,32 @@
   color: #444;
 }
 
+/* === PATCH TERAKHIR: RAPIKAN BADGE BUTUH CEPAT === */
+#butuh-cepat article.wg-post .wg-sec-badge {
+  position: relative !important;   /* Bukan absolute lagi */
+  top: auto !important;
+  right: auto !important;
+  left: 0 !important;
+  transform: none !important;
+
+  display: inline-flex !important;
+  align-items: center;
+  gap: 4px;
+
+  margin: 0 0 4px 0 !important;
+
+  font-size: 10px !important;
+  padding: 2px 6px !important;
+  border-radius: 999px;
+  background: rgba(24,119,242,0.06);
+  border: 1px solid rgba(24,119,242,0.18);
+  color: #0b3a86;
+}
+
+/* teks sumber di dalam badge */
+#butuh-cepat article.wg-post .wg-sec-badge .wg-source {
+  font-size: 10px !important;
+  font-weight: 600;
+  color: #01A532;
+}
 
